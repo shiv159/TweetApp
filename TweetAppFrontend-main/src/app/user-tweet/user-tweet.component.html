@@ -1,0 +1,52 @@
+<div class="card" style="width: 400px; color: #fff; background-color: #4b0082">
+  <img
+    class="card-img-top img-fluid img-brand"
+    src="../../assets/profile.png"
+    alt="Card image"
+  />
+  <div class="card-body">
+    <p class="card-title"><mat-icon>@</mat-icon> {{ user.username }}</p>
+    <p class="card-text inline">
+      <mat-icon>person</mat-icon> {{ user.firstName }} {{ user.lastName }}
+    </p>
+    <p class="card-text"><mat-icon>email</mat-icon> {{ user.email }}</p>
+    <p class="card-text"><mat-icon>phone</mat-icon> {{ user.contactNumber }}</p>
+  </div>
+</div>
+
+<div>
+  <h4
+    class="card-header"
+    style="
+      background: #4b0082;
+      color: #fff;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    "
+  >
+    Tweets by {{ currentRouteUsername }}
+  </h4>
+</div>
+
+<div class="row row-cols-1" *ngFor="let tweet of tweetList">
+  <div class="entete card w-100 h-100">
+    <div class="row no-gutters">
+      <div class="col-md-10">
+        <div class="card-body">
+          <p class="card-text">
+            {{ tweet.tweetName }}
+
+            <small class="text-muted" *ngIf="tweet.tweetTag != null">{{
+              tweet.tweetTag
+            }}</small>
+          </p>
+        </div>
+        <div class="card-footer mt-auto">
+          <p class="card-text">
+            <small class="text-muted">{{ tweet.postDate | dateAgo }}</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

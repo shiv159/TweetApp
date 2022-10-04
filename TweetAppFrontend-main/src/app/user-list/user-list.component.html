@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-9">
+      <div class="row row-col-4 g-4">
+        <div *ngFor="let user of userList">
+          <div class="card ml-5 col mt-3" style="width: 18rem">
+            <img
+              src="../../assets/profile.png"
+              [ngClass]="
+                user.username == currentUser.username
+                  ? 'card-img-top'
+                  : 'card-img-top grayscale'
+              "
+              alt="..."
+            />
+            <div class="card-body">
+              <h6 class="card-title">
+                <a class="link-primary" routerLink="tweets/{{ user.username }}"
+                  >Get all Tweets by user
+                </a>
+              </h6>
+              <div class="card-text">
+                <div>
+                  <span> {{ user.username }}</span>
+                  <!-- {{ user.email }}
+                    <li>{{ user.firstName }} {{ user.lastName }}</li> -->
+                </div>
+                <div>
+                  <span> {{ user.firstName }} {{ user.lastName }}</span>
+                  <!-- {{ user.email }}
+                    <li>{{ user.firstName }} {{ user.lastName }}</li> -->
+                </div>
+                <div>
+                  <span> {{ user.email }}</span>
+                  <!-- {{ user.email }}
+                  <li>{{ user.firstName }} {{ user.lastName }}</li> -->
+                </div>
+
+                <!-- <li>{{ user.contactNumber }}</li> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
