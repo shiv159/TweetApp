@@ -1,9 +1,9 @@
 # TweetApp
 
-## Angular used for forntend and Spring boot used for backend
-## AWS cosmos db used to store the data
+### Angular used for forntend and Spring boot used for backend
+### AWS cosmos db used to store the data
 
-#Features-
+# Features-
 ### user can login,register,changes password using their email.
 ### user can tweet,see others tweet,search for other users
 
